@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("com.mikhaellopez:circularprogressbar:3.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 
 //Lifecycle
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
@@ -53,7 +54,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
     implementation ("com.github.Dimezis:BlurView:version-2.0.6")
-    implementation ("com.github.trinh2205:PersonalFinanceManagement")
+//    implementation ("com.github.trinh2205:PFM")
+
     implementation("androidx.activity:activity-ktx:1.10.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

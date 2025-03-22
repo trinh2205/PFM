@@ -6,7 +6,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pfm.databinding.ActivityIntroBinding
 
-class IntroActivity : AppCompatActivity() {
+class  IntroActivity : AppCompatActivity() {
     lateinit var binding: ActivityIntroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
