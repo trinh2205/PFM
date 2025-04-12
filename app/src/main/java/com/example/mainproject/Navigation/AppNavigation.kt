@@ -1,19 +1,23 @@
 package com.example.mainproject.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mainproject.Navigation.Routes
+import com.example.mainproject.ui.screens.Home
 import com.example.mainproject.ui.screens.MainScreen
+import com.example.mainproject.ui.screens.QuickAnalysis
 import com.example.mainproject.ui.screens.SignIn
 import com.example.mainproject.ui.screens.SignUp
 import com.example.mainproject.ui.screens.SplashScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "splashScreen") {
+    NavHost(
+        navController = navController, startDestination = "splashScreen") {
         composable("splashScreen") {
             SplashScreen(onNavigateToMain = {
                 navController.navigate("mainScreen") {
@@ -30,6 +34,14 @@ fun AppNavigation(navController: NavHostController) {
         composable(Routes.SIGN_UP) {
             SignUp(navController) // Màn hình Sign Up
         }
+        composable(Routes.HOME) {
+            Home(navController)
+        }
+        composable(Routes.QUICK_ANALYSIS) {
+            QuickAnalysis(navController)
+        }
+
+
     }
 }
 

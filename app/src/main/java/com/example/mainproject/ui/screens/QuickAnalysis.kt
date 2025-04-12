@@ -45,12 +45,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.mainproject.Navigation.Routes
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
-fun QuickAnalysis() {
+fun QuickAnalysis(navController: NavController) {
 
-    val textField1 = remember { mutableStateOf("") }
+//    val textField2 = remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -86,7 +88,11 @@ fun QuickAnalysis() {
                 )
                 Icon(Icons.Default.Notifications, contentDescription = null, tint = Color.White)
             }
-            FinancialCard()
+            FinancialCard(
+                onClick = {
+                    navController.navigate(Routes.QUICK_ANALYSIS)
+                }
+            )
             Spacer(modifier = Modifier.height(16.dp))
             Box(modifier = Modifier
                 .weight(1f)

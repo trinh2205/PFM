@@ -56,14 +56,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.mainproject.Navigation.Routes
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil.CoilImage
 
-@Preview(showBackground = true)
-@Composable
-fun Home() {
 
-    val textField1 = remember { mutableStateOf("") }
+@Composable
+fun Home(navController: NavController) {
+
+//    val textField1 = remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -222,7 +227,7 @@ fun Home() {
             Box(modifier = Modifier
                 .weight(1f)
                 ) {
-                BottomBackgroundBar()
+                BottomBackgroundBar(navController = navController)
 
 
             }
@@ -232,12 +237,15 @@ fun Home() {
                 BottomNavigationBar()
 
             }
+
+
         }
     }
 }
 
 @Composable
 fun BottomBackgroundBar(
+    navController: NavController,
     selectedTimeFilter: String = "Weekly",
     onTimeFilterChange: (String) -> Unit = {}
 ) {
@@ -254,7 +262,10 @@ fun BottomBackgroundBar(
                 .padding(horizontal = 16.dp, vertical = 24.dp)
         ) {
             // 1. Thẻ tổng quan tài chính
-            FinancialCard()
+            FinancialCard(
+                onClick = {
+                navController.navigate(Routes.QUICK_ANALYSIS)
+            })
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -355,12 +366,14 @@ fun TimeFilterToggle(selected: String, onSelected: (String) -> Unit) {
 }
 
 @Composable
-fun FinancialCard() {
+fun FinancialCard(onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
+            .clickable { onClick() }
             .clip(RoundedCornerShape(20.dp))
+
             .background(Color(0xFF3498DB)) // Màu xanh dương
             .padding(16.dp)
     ) {
@@ -557,5 +570,6 @@ fun TransactionList(filter: String) {
         }
     }
 }
+
 
 
