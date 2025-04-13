@@ -6,4 +6,8 @@ object Routes {
     const val SIGN_IN = "SignInScreen"
     const val HOME = "home"
     const val QUICK_ANALYSIS = "quick_analysis"
+    const val BAR_CHART = "bar_chart"
+    const val SWAP_HORIZ  = "Swap_Horiz "
+    const val LAYERS = "Layers"
+    const val PROFILE = "profile"
 }

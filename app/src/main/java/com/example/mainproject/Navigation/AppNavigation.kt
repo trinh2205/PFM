@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.mainproject.Navigation.Routes
 import com.example.mainproject.ui.screens.Home
 import com.example.mainproject.ui.screens.MainScreen
+import com.example.mainproject.ui.screens.Profile
 import com.example.mainproject.ui.screens.QuickAnalysis
 import com.example.mainproject.ui.screens.SignIn
 import com.example.mainproject.ui.screens.SignUp
@@ -40,7 +41,6 @@ fun AppNavigation(navController: NavHostController) {
         composable(Routes.QUICK_ANALYSIS) {
             QuickAnalysis(navController)
         }
-
 
     }
 }

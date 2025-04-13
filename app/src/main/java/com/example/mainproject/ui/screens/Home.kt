@@ -1,5 +1,4 @@
 package com.example.mainproject.ui.screens
-import androidx.activity.compose.R
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.getValue

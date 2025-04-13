@@ -106,16 +106,11 @@ fun QuickAnalysis(navController: NavController) {
                 BottomNavigationBar()
 
             }
-            Spacer(modifier = Modifier.height(16.dp))
-
-
         }
     }
 }
 @Composable
-fun AnalysisBackgroundBar(
-
-) {
+fun AnalysisBackgroundBar() {
 
     Box(
         modifier = Modifier
