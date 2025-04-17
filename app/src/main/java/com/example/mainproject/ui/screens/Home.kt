@@ -56,12 +56,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil.CoilImage
 
-@Preview(showBackground = true)
 @Composable
+
+fun Home(navController: NavController) {
+
 fun Home() {
+
 
     val textField1 = remember { mutableStateOf("") }
     Column(
